@@ -3,8 +3,9 @@
     "version": "0.0.1",
     "description": "Internet media type database for Node.js and browsers",
     "author": "Mark Vasilkov (https://github.com/mvasilkov)",
-    "main": "mime-type",
+    "main": "mediatype",
     "scripts": {
+        "build": "node build.js reg_files/*.types > reg.json",
         "test": "mocha"
     },
     "repository": {

@@ -1,5 +1,6 @@
 jshint = node_modules/.bin/jshint
 mocha = node_modules/.bin/mocha
+node = node
 npm = npm
 
 all: jshint mocha
@@ -12,3 +13,6 @@ jshint: node_modules
 
 mocha: node_modules
 	@ $(mocha) -R spec
+
+build:
+	@ $(node) build.js reg_files/*.types > reg.json
