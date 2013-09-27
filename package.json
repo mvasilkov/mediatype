@@ -1,5 +1,5 @@
 {
-    "name": "mime-type",
+    "name": "mediatype",
     "version": "0.0.1",
     "description": "Internet media type database for Node.js and browsers",
     "author": "Mark Vasilkov (https://github.com/mvasilkov)",
@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:mvasilkov/mime-type.git"
+        "url": "git@github.com:mvasilkov/mediatype.git"
     },
     "devDependencies": {
         "jshint": "~2.1",
