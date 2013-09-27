@@ -15,4 +15,4 @@ mocha: node_modules
 	@ $(mocha) -R spec
 
 build:
-	@ $(node) build.js reg_files/*.types > reg.json
+	@ $(node) build.js reg_files/*.txt > reg.json
