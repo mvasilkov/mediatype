@@ -16,4 +16,17 @@ describe('mediatype', function () {
         eq('application/octet-stream', mediatype.get('ninjacy'))
         eq('foo/bar', mediatype.get('ninjacy', 'foo/bar'))
     })
+
+    it('should have method: lookup()', function () {
+        eq('text/plain', mediatype.lookup('file.txt'))
+        eq('text/plain', mediatype.lookup('FILE.TXT'))
+        eq('text/plain', mediatype.lookup('dir/file.txt'))
+        eq('text/plain', mediatype.lookup('.file.txt'))
+        eq('text/plain', mediatype.lookup('.txt'))
+        eq('text/plain', mediatype.lookup('txt'))
+        eq('text/plain', mediatype.lookup('/txt'))
+        eq('text/plain', mediatype.lookup('\\txt'))
+        eq('application/octet-stream', mediatype.lookup('file.ninjacy'))
+        eq('foo/bar', mediatype.lookup('file.ninjacy', 'foo/bar'))
+    })
 })

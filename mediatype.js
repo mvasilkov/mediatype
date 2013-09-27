@@ -22,6 +22,12 @@
         return this.types[a.toLowerCase()] || b || this.default
     }
 
+    Mapping.prototype.lookup = function (a, b) {
+        var ar = a.match(/.*\b(?!$)(.*)/)
+        if (ar) return this.get(ar[1], b)
+        else return b || this.default
+    }
+
     var mediatype = new Mapping
     mediatype.define(require('./reg.json'))
     mediatype.default = mediatype.get('bin')
