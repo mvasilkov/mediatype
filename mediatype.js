@@ -2,6 +2,7 @@
     function Mapping() {
         this.types = Object.create(null)
         this.extensions = Object.create(null)
+        this.default = null
     }
 
     var op = Object.prototype.hasOwnProperty
@@ -17,8 +18,13 @@
         }
     }
 
+    Mapping.prototype.get = function (a, b) {
+        return this.types[a.toLowerCase()] || b || this.default
+    }
+
     var mediatype = new Mapping
     mediatype.define(require('./reg.json'))
+    mediatype.default = mediatype.get('bin')
 
     module.exports = mediatype
 })()
