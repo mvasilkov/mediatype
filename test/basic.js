@@ -15,6 +15,11 @@ describe('mediatype', function () {
         eq('text/plain', mediatype.get('TXT'))
         eq('application/octet-stream', mediatype.get('ninjacy'))
         eq('foo/bar', mediatype.get('ninjacy', 'foo/bar'))
+        // new and improved
+        eq('application/font-woff', mediatype.get('woff'))
+        eq('application/octet-stream', mediatype.get('buffer'))
+        eq('audio/mp4', mediatype.get('m4a'))
+        eq('font/opentype', mediatype.get('otf'))
     })
 
     it('should have method: lookup()', function () {
