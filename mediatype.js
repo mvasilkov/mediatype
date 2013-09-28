@@ -28,6 +28,11 @@
         else return b || this.default
     }
 
+    Mapping.prototype.extension = function (a, b) {
+        a = a.replace(/\s|;.*/g, '')
+        return this.extensions[a.toLowerCase()] || b || null
+    }
+
     var mediatype = new Mapping
     mediatype.define(require('./reg.json'))
     mediatype.default = mediatype.get('bin')
