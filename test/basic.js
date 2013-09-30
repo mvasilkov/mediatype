@@ -1,9 +1,9 @@
 var assert = require('assert'),
     mediatype = require('../mediatype')
 
-function eq(a, b) { assert.strictEqual(a, b) }
-
 describe('mediatype', function () {
+    function eq(a, b) { assert.strictEqual(a, b) }
+
     it('should have useful defaults', function () {
         assert(Object.keys(mediatype.types).length > 500)
         assert(Object.keys(mediatype.extensions).length > 500)
